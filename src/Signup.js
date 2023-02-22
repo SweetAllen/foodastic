@@ -47,6 +47,7 @@ const Signup = () => {
     <>
       <div className="p-4 box">
         <h2 className="mb-3"> Signup</h2>
+        {/* {process.env.REACT_APP_FIREBASE_API_KEY} */}
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
