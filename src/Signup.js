@@ -7,7 +7,8 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [password, setPassword] = useState("");
-  const { signUp } = useAuth();
+  const { signUp, addtodb } = useAuth();
+
   let navigate = useNavigate();
 
 //   async function handleSubmit(e) {
@@ -37,6 +38,8 @@ const Signup = () => {
     setError("");
     try {
       await signUp(email, password);
+      await addtodb(email,password)
+
       navigate("/");
     } catch (err) {
       setError(err.message);
