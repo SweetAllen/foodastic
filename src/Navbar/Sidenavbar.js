@@ -1,16 +1,16 @@
 import { useState } from "react";
- import control from "../../src/assets/control.png"
- import logo from "../../src/assets/logo.png"
- import calendar from "../../src/assets/Calendar.png"
- import chartfill from "../../src/assets/Chart_fill.png"
- import chart from "../../src/assets/Chart.png"
- import chat from "../../src/assets/Chat.png"
- import folder from "../../src/assets/Folder.png"
- import search from "../../src/assets/Search.png"
- import setting from "../../src/assets/Setting.png"
- import user from "../../src/assets/User.png"
- import { NavLink } from "react-router-dom";
- import './Sidenavbar.css'
+import control from "../../src/assets/control.png"
+import logo from "../../src/assets/logo.png"
+import calendar from "../../src/assets/Calendar.png"
+import chartfill from "../../src/assets/Chart_fill.png"
+import chart from "../../src/assets/Chart.png"
+import chat from "../../src/assets/Chat.png"
+import folder from "../../src/assets/Folder.png"
+import search from "../../src/assets/Search.png"
+import setting from "../../src/assets/Setting.png"
+import user from "../../src/assets/User.png"
+import { NavLink } from "react-router-dom";
+import './Sidenavbar.css'
 const Sidenavbar = () => {
   const [open, setOpen] = useState(true);
   const Menus = [
@@ -24,9 +24,10 @@ const Sidenavbar = () => {
     { title: "Setting", src:setting },
   ];
 
+  let activeClass = `flex rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 bg-light-white`
+
   return (
     // <div className="container">
-
     <div className="flex flex-direction-row position-absolute ">
       <div
         className={` ${
@@ -61,10 +62,14 @@ const Sidenavbar = () => {
             <NavLink
             to={Menu.title}
               key={index}
-              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
-              ${Menu.gap ? "mt-9" : "mt-2"} ${
-                index === 0 && "bg-light-white"
-              } `}
+              // className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
+              // ${Menu.gap ? "mt-9" : "mt-2"} ${
+              //   index === 0 && "bg-light-white"
+              // } `}
+              className={
+                ({ isActive }) =>
+              isActive ? activeClass : `flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 ${Menu.gap ? "mt-9" : "mt-2"}`
+              }
             >
               <img src={Menu.src} />
               <span className={`${!open && "hidden"} origin-left duration-200`}>
