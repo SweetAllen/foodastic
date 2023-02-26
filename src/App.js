@@ -6,24 +6,26 @@ import Login from "./Login";
 import Home from "./Home";
 import { UserAuthContextProvider } from "./context/AuthContext";
 import { Container, Row, Col } from "react-bootstrap";
-
-// import { AuthProvider } from "./context/AuthContext";
-
+import SidebarLayout from "./SidebarLayout";
+import Test from "./Test";
 const App = () => {
   return (
-<Container style={{ width: "400px" }}>
-      <Row>
-        <Col>
+
+
+     
           <UserAuthContextProvider>
             <Routes>
-              <Route path="/home" element={<Home />} />
+            <Route element={<SidebarLayout/>}>
+            <Route path="/home" element={<Home />} />
+            <Route path="/Test" element={<Test />} />
+
+            </Route>
               <Route path="/" element={<Login />} />
               <Route path="/signup" element={<Sign />} />
             </Routes>
           </UserAuthContextProvider>
-        </Col>
-      </Row >
-    </Container >
+   
+
 //    <AuthProvider>
 //  <Routes>
 //     <Route path="/" element={<Signup/>}></Route>

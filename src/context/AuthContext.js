@@ -27,7 +27,9 @@ export function UserAuthContextProvider({ children }) {
     
     });
   }
-
+  function readdata() {
+    return  getDocs(doc(db, "users", "userinfo"))
+  }
   function logOut() {
     return signOut(auth);
   }
@@ -49,7 +51,7 @@ export function UserAuthContextProvider({ children }) {
 
   return (
     <userAuthContext.Provider
-      value={{ user, logIn, signUp, logOut, googleSignIn,addtodb }}
+      value={{ user, logIn, signUp, logOut, googleSignIn,addtodb, readdata }}
     >
       {children}
     </userAuthContext.Provider>

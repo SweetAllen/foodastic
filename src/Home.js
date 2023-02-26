@@ -4,7 +4,7 @@ import { useAuth } from "./context/AuthContext";
 import { Button } from "react-bootstrap";
 import { db } from "./firebase";
 import { doc, getDoc } from "firebase/firestore";
-
+import { Container } from "react-bootstrap";
 const Home = () => {
   const { logOut, user } = useAuth();
    const [info,setInfo]=useState("")
@@ -39,17 +39,26 @@ useEffect(() => {
       console.log(error.message);
     }
   };
+        // {/* <Container className='d-flex align-items-center justify-content-center'  */
 
   return (
     <>
-      <div className="p-4 box mt-3 text-center">
+    {/* <div className="flex">
+        <h1 className="text-2xl font-semibold ">Home Page</h1>
+      </div> */}
+       <Container className='d-flex align-items-center justify-content-center'>
+      <div>
+      
+     <div className="p-4 box mt-3 text-center">
         Hello Welcome  {name}<br />
-      </div>
-      <div className="d-grid gap-2">
+      </div> 
+      {/* <div className="d-grid gap-2">
         <Button variant="primary" onClick={handleLogout}>
           Log out
         </Button>
+      </div> */}
       </div>
+      </Container>
     </>
   );
 };

@@ -1,0 +1,9 @@
+.container{
+	/* margin-left: -2%; */
+	display: flex;
+	flex-direction: row;
+	position: absolute;
+}
+
+
+/* flex flex-direction-row position-absolute */

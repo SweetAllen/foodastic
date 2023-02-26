@@ -6,18 +6,23 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Container } from 'react-bootstrap';
+import Sidenavbar from './Navbar/Sidenavbar';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+ 
   <React.StrictMode>
     <BrowserRouter>
-    <Container className='d-flex align-items-center justify-content-center'
+    {/* <Sidenavbar/> */}
+
+    {/* <Container className='d-flex align-items-center justify-content-center'
     style={{minHeight:'100vh'}}
     >
-      <div className='w-100' style={{maxWidth:'400px'}}>
+
+      <div className='w-100' style={{maxWidth:'400px'}}> */}
       <App/>
 
-      </div>
-    </Container>
+      {/* </div>
+    </Container> */}
 
     </BrowserRouter>
   </React.StrictMode>
@@ -31,4 +36,8 @@ reportWebVitals();
 
 
 
+
+
+
+        // {/* <Container className='d-flex align-items-center justify-content-center'  */
 
