@@ -24,7 +24,7 @@ const Sidenavbar = () => {
     { title: "Setting", src:setting },
   ];
 
-  let activeClass = `flex rounded-md p-2 no-underline cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 bg-light-white`
+
 
   return (
     // <div className="container">
@@ -68,7 +68,7 @@ const Sidenavbar = () => {
               // } `}
               className={
                 ({ isActive }) =>
-              isActive ? activeClass : `flex no-underline rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 ${Menu.gap ? "mt-9" : "mt-2"}`
+              isActive ? `flex rounded-md p-2 no-underline cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 bg-light-white ${Menu.gap ? "mt-9" : "mt-2"}` : `flex no-underline rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 ${Menu.gap ? "mt-9" : "mt-2"}`
               }
             >
               <img src={Menu.src} />
