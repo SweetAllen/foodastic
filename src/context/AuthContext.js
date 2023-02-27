@@ -13,21 +13,21 @@ const userAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
   const [user, setUser] = useState({});
-  const userref = collection(db, 'users');
+  const userRef = collection(db, 'users');
   function logIn(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
   }
   function signUp(email, password) {
     return createUserWithEmailAndPassword(auth, email, password);
   }
-  function addtodb(email, password) {
+  function addToDb(email, password) {
     return  setDoc(doc(db, "users", "userinfo"), {
       email: email,
       password: password
     
     });
   }
-  function readdata() {
+  function readData() {
     return  getDocs(doc(db, "users", "userinfo"))
   }
   function logOut() {
@@ -39,9 +39,9 @@ export function UserAuthContextProvider({ children }) {
   }
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
-      console.log("Auth", currentuser);
-      setUser(currentuser);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      console.log("Auth", user);
+      setUser(user);
     });
 
     return () => {
@@ -51,7 +51,7 @@ export function UserAuthContextProvider({ children }) {
 
   return (
     <userAuthContext.Provider
-      value={{ user, logIn, signUp, logOut, googleSignIn,addtodb, readdata }}
+      value={{ user, logIn, signUp, logOut, googleSignIn, addToDb, readData }}
     >
       {children}
     </userAuthContext.Provider>
