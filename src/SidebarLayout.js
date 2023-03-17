@@ -3,7 +3,7 @@ import Sidenavbar from './Navbar/Sidenavbar';
 import { Container } from 'react-bootstrap';
 const SidebarLayout = () => (
   <>
-  <Sidenavbar />
+    <Sidenavbar />
 
     <Outlet />
   </>

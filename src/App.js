@@ -16,13 +16,12 @@ const App = () => {
           <UserAuthContextProvider>
             <Routes>
             <Route element={<SidebarLayout/>}>
-            <Route path="/Dashboard" element={<Home />} />
-            <Route path="/Test" element={<Test />} />
-            <Route path="/Accounts" element={<Test />} />
-            <Route path="/Orders" element={<Test />} />
-            <Route path="/Search" element={<Test />} />
-            <Route path="/Setting" element={<Test />} />
-
+              <Route path="/Dashboard" element={<Home />} />
+              <Route path="/Test" element={<Test />} />
+              <Route path="/Accounts" element={<Test />} />
+              <Route path="/Orders" element={<Test />} />
+              <Route path="/Search" element={<Test />} />
+              <Route path="/Setting" element={<Test />} />
             </Route>
               <Route path="/" element={<Login />} />
               <Route path="/signup" element={<Sign />} />
