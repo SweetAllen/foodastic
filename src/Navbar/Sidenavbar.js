@@ -28,7 +28,7 @@ const Sidenavbar = () => {
 
   return (
     // <div className="container">
-    <div className="flex flex-direction-row position-absolute ">
+    <div className="flex flex-direction-row position-fixed ">
       <div
         className={` ${
           open ? "w-72" : "w-20 "
@@ -55,7 +55,7 @@ const Sidenavbar = () => {
             Foodastic
           </h1>
         </div>
-        <ul className="pt-6">
+        <ul className="pt-4">
           {Menus.map((Menu, index) => (
             <li>
 
